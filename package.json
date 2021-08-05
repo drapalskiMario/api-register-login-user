@@ -1,0 +1,30 @@
+{
+  "name": "api-user-register-and-signup",
+  "version": "1.0.0",
+  "description": "sign up and register as a user",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --watch --passWithNoTests --silent"
+  },
+  "keywords": [
+    "user",
+    "register",
+    "signup"
+  ],
+  "author": "Mario Junior",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.10",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.0.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
+  }
+}
