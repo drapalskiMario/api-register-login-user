@@ -4,7 +4,7 @@
   "description": "sign up and register as a user",
   "main": "index.ts",
   "scripts": {
-    "test": "jest --watch --passWithNoTests --silent"
+    "test": "jest --watch --passWithNoTests"
   },
   "keywords": [
     "user",
