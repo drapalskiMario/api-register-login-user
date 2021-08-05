@@ -1,7 +1,7 @@
-import { User } from '../entities/user'
-import { Hasher } from '../interface-adapters/cryptography/hasher'
-import { AddUserRepository } from '../interface-adapters/repositories/add'
-import { LoadUserByEmailRepository } from '../interface-adapters/repositories/load-by-email'
+import { User } from '../../entities/user'
+import { Hasher } from '../../interface-adapters/cryptography/hasher'
+import { AddUserRepository } from '../../interface-adapters/repositories/add'
+import { LoadUserByEmailRepository } from '../../interface-adapters/repositories/load-by-email'
 import { AddUser, AddUserParams } from './add-user'
 
 type SutTypes = {

@@ -1,8 +1,8 @@
-import { User } from '../entities/user'
-import { HashComparer } from '../interface-adapters/cryptography/hash-comparer'
-import { Encrypter } from '../interface-adapters/cryptography/encrypter'
-import { LoadUserByEmailRepository } from '../interface-adapters/repositories/load-by-email'
-import { SaveUserTokenRepository } from '../interface-adapters/repositories/save-user-token'
+import { User } from '../../entities/user'
+import { HashComparer } from '../../interface-adapters/cryptography/hash-comparer'
+import { Encrypter } from '../../interface-adapters/cryptography/encrypter'
+import { LoadUserByEmailRepository } from '../../interface-adapters/repositories/load-by-email'
+import { SaveUserTokenRepository } from '../../interface-adapters/repositories/save-user-token'
 import { Authentication } from './authentication'
 
 type SutTypes = {

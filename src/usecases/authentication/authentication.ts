@@ -1,7 +1,7 @@
-import { Encrypter } from '../interface-adapters/cryptography/encrypter'
-import { HashComparer } from '../interface-adapters/cryptography/hash-comparer'
-import { LoadUserByEmailRepository } from '../interface-adapters/repositories/load-by-email'
-import { SaveUserTokenRepository } from '../interface-adapters/repositories/save-user-token'
+import { Encrypter } from '../../interface-adapters/cryptography/encrypter'
+import { HashComparer } from '../../interface-adapters/cryptography/hash-comparer'
+import { LoadUserByEmailRepository } from '../../interface-adapters/repositories/load-by-email'
+import { SaveUserTokenRepository } from '../../interface-adapters/repositories/save-user-token'
 
 export class Authentication {
   constructor (
