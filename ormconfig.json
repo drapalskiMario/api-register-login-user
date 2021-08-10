@@ -5,11 +5,11 @@
   "database": "api_login",
   "username": "admin",
   "password": "1234",
-  "entities": ["src/framework-and-drivers/postgres/entities/*.ts"],
-  "migrations": ["src/framework-and-drivers/postgres/migrations/*.ts"],
+  "entities": ["src/adapters/database/entities/*.ts"],
+  "migrations": ["src/adapters/database/migrations*.ts"],
   "cli": {
-    "migrationsDir": "src/framework-and-drivers/postgres/migrations/",
-    "entitiesDir": "src/framework-and-drivers/postgres/entities/"
+    "migrationsDir": "src/adapters/database/migrations/",
+    "entitiesDir": "src/adapters/database/entities/"
   }
 }
 
