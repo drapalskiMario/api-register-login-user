@@ -1,10 +1,9 @@
-import { AuthenticationUser, AuthenticationUserParams, Token } from '../../domain/use-cases/autentication'
+import { AuthenticationUser, AuthenticationUserParams, AuthenticationUserResponse } from '../../domain/use-cases/autentication'
 import { AuthUserValidator } from '../../ports/validators/auth-user-validator'
 import { Encrypter } from '../../ports/cryptography/encrypter'
 import { HashComparer } from '../../ports/cryptography/hash-comparer'
 import { LoadUserByEmailRepository } from '../../ports/repositories/load-by-email'
 import { SaveUserTokenRepository } from '../../ports/repositories/save-user-token'
-import { Error } from '../../domain/use-cases/errors'
 import { invalidParamsError } from '../errors'
 
 export class AuthenticationUserUseCase implements AuthenticationUser {
@@ -16,7 +15,7 @@ export class AuthenticationUserUseCase implements AuthenticationUser {
     private readonly saveUserTokenRepository: SaveUserTokenRepository
   ) { }
 
-  async auth (authenticationUserParams: AuthenticationUserParams): Promise<Token | Error> {
+  async auth (authenticationUserParams: AuthenticationUserParams): Promise<AuthenticationUserResponse> {
     const errors = await this.authUserValidator.validate(authenticationUserParams)
     if (!errors) {
       const user = await this.loadUserByEmailRepository.loadByEmail(authenticationUserParams.email)
@@ -25,10 +24,10 @@ export class AuthenticationUserUseCase implements AuthenticationUser {
         if (isValid) {
           const tokenResult = await this.encrypter.encrypt(user.id)
           await this.saveUserTokenRepository.saveUserToken(user.id, tokenResult)
-          return { token: tokenResult }
+          return { error: null, success: tokenResult }
         }
       }
     }
-    return invalidParamsError()
+    return { error: invalidParamsError(), success: null }
   }
 }

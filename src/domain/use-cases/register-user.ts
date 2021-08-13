@@ -1,5 +1,4 @@
 import { User } from '../entities/user'
-import { Error } from './errors'
 
 export type RegisterUserParams = {
   name: string,
@@ -8,6 +7,10 @@ export type RegisterUserParams = {
   passwordConfirmation: string
 }
 
+export type RegisterUserResponse = {
+  error: string,
+  success: User
+}
 export interface RegisterUser {
-  register(registerUserParams: RegisterUserParams): Promise<User | Error>
+  register(registerUserParams: RegisterUserParams): Promise<RegisterUserResponse>
 }

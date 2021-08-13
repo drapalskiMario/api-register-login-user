@@ -89,7 +89,7 @@ describe('RegisterUserUseCase', () => {
     const { sut, validatorStub } = makeSut()
     jest.spyOn(validatorStub, 'validate').mockReturnValue(Promise.resolve(true))
     const response = await sut.register(mockRegisterUserParams())
-    expect(response).toEqual({ error: 'invalid params' })
+    expect(response).toEqual({ error: 'invalid params', success: null })
   })
 
   test('should call loadUserByEmailRepository with correct email', async () => {
@@ -108,7 +108,7 @@ describe('RegisterUserUseCase', () => {
       password: 'hash_password'
     }))
     const response = await sut.register(mockRegisterUserParams())
-    expect(response).toEqual({ error: 'user already exists' })
+    expect(response).toEqual({ error: 'user already exists', success: null })
   })
 
   test('should call hasher with correct value', async () => {
@@ -133,10 +133,13 @@ describe('RegisterUserUseCase', () => {
     const { sut } = makeSut()
     const user = await sut.register(mockRegisterUserParams())
     expect(user).toEqual({
-      id: 'any_id',
-      name: 'any_name',
-      email: 'any_email',
-      password: 'any_hash'
+      error: null,
+      success: {
+        id: 'any_id',
+        name: 'any_name',
+        email: 'any_email',
+        password: 'any_hash'
+      }
     })
   })
 })

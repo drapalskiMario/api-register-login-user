@@ -1,9 +1,7 @@
-import { Error } from '../domain/use-cases/errors'
-
-export const invalidParamsError = (): Error => {
-  return { error: 'invalid params' }
+export const invalidParamsError = (): string => {
+  return 'invalid params'
 }
 
-export const userExistsError = (): Error => {
-  return { error: 'user already exists' }
+export const userExistsError = (): string => {
+  return 'user already exists'
 }

@@ -1,6 +1,4 @@
-import { User } from '../../domain/entities/user'
-import { Error } from '../../domain/use-cases/errors'
-import { RegisterUser, RegisterUserParams } from '../../domain/use-cases/register-user'
+import { RegisterUser, RegisterUserParams, RegisterUserResponse } from '../../domain/use-cases/register-user'
 import { Hasher } from '../../ports/cryptography/hasher'
 import { LoadUserByEmailRepository } from '../../ports/repositories/load-by-email'
 import { RegisterUserRepository } from '../../ports/repositories/register'
@@ -15,7 +13,7 @@ export class RegisterUserUseCase implements RegisterUser {
     private readonly registerUserRepository: RegisterUserRepository
   ) { }
 
-  async register (registerUserParams: RegisterUserParams): Promise<User | Error> {
+  async register (registerUserParams: RegisterUserParams): Promise<RegisterUserResponse> {
     const errors = await this.registerUserValidator.validate(registerUserParams)
     if (!errors) {
       delete registerUserParams.passwordConfirmation
@@ -24,10 +22,10 @@ export class RegisterUserUseCase implements RegisterUser {
         const hashedPassword = await this.hasher.hash(registerUserParams.password)
         registerUserParams.password = hashedPassword
         const resultUser = await this.registerUserRepository.register(registerUserParams)
-        return resultUser
+        return { error: null, success: resultUser }
       }
-      return userExistsError()
+      return { error: userExistsError(), success: null }
     }
-    return invalidParamsError()
+    return { error: invalidParamsError(), success: null }
   }
 }

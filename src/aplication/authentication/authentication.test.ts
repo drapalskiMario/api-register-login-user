@@ -106,7 +106,7 @@ describe('Authentication User Service', () => {
     const { sut, validatorStub } = makeSut()
     jest.spyOn(validatorStub, 'validate').mockReturnValue(Promise.resolve(true))
     const response = await sut.auth(mockAuthenticationUserParams())
-    expect(response).toEqual({ error: 'invalid params' })
+    expect(response).toEqual({ error: 'invalid params', success: null })
   })
 
   test('should call loadUserByEmail with correct email', async () => {
@@ -120,7 +120,7 @@ describe('Authentication User Service', () => {
     const { sut, loadUserByEmailRepositoryStub } = makeSut()
     jest.spyOn(loadUserByEmailRepositoryStub, 'loadByEmail').mockResolvedValueOnce(Promise.resolve(null))
     const response = await sut.auth(mockAuthenticationUserParams())
-    expect(response).toEqual({ error: 'invalid params' })
+    expect(response).toEqual({ error: 'invalid params', success: null })
   })
 
   test('should call hashComparer with correct values', async () => {
@@ -134,7 +134,7 @@ describe('Authentication User Service', () => {
     const { sut, hasherComparerStub } = makeSut()
     jest.spyOn(hasherComparerStub, 'compare').mockResolvedValueOnce(Promise.resolve(null))
     const response = await sut.auth(mockAuthenticationUserParams())
-    expect(response).toEqual({ error: 'invalid params' })
+    expect(response).toEqual({ error: 'invalid params', success: null })
   })
 
   test('should call encrypter with correct value', async () => {
