@@ -1,5 +1,5 @@
 import { AuthenticationUser } from '../../../domain/use-cases/autentication'
-import { Controller, HttpRequest, HttpResponse } from './controller-adapter'
+import { Controller, HttpRequest, HttpResponse } from '../type-adapter/controller-adapter'
 
 export class LoginUserController implements Controller {
   constructor (

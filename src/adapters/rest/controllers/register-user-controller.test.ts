@@ -1,5 +1,5 @@
 import { RegisterUser, RegisterUserParams, RegisterUserResponse } from '../../../domain/use-cases/register-user'
-import { HttpRequest } from './controller-adapter'
+import { HttpRequest } from '../type-adapter/controller-adapter'
 import { RegisterUserController } from './register-user-controller'
 
 type SutTypes = {
