@@ -1,5 +1,5 @@
 import { AuthenticationUser, AuthenticationUserParams, AuthenticationUserResponse } from '../../../domain/use-cases/autentication'
-import { HttpRequest } from './controller-adapter'
+import { HttpRequest } from '../type-adapter/controller-adapter'
 import { LoginUserController } from './login-user-controller'
 
 type SutTypes = {

@@ -1,12 +1,12 @@
 import { RegisterUser } from '../../../domain/use-cases/register-user'
-import { Controller, HttpRequest, HttpResponse } from './controller-adapter'
+import { Controller, HttpRequest, HttpResponse } from '../type-adapter/controller-adapter'
 
 export class RegisterUserController implements Controller {
   constructor (
     private readonly registerUser: RegisterUser
-  ) {}
+  ) { }
 
-  async handle (request: HttpRequest): Promise <HttpResponse> {
+  async handle (request: HttpRequest): Promise<HttpResponse> {
     try {
       const registerResponse = await this.registerUser.register(request.body)
       if (registerResponse.error) return { statusCode: 400, body: registerResponse.error }
