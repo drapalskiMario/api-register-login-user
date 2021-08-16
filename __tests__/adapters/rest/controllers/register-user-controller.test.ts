@@ -1,6 +1,6 @@
-import { RegisterUser, RegisterUserParams, RegisterUserResponse } from '../../../domain/use-cases/register-user'
-import { HttpRequest } from '../type-adapter/controller-adapter'
-import { RegisterUserController } from './register-user-controller'
+import { RegisterUser, RegisterUserParams, RegisterUserResponse } from '../../../../src/domain/use-cases/register-user'
+import { HttpRequest } from '../../../../src/adapters/rest/type-adapter/controller-adapter'
+import { RegisterUserController } from '../../../../src/adapters/rest/controllers/register-user-controller'
 
 type SutTypes = {
   sut: RegisterUserController,

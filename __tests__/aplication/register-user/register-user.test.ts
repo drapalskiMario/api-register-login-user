@@ -1,11 +1,11 @@
 
-import { User } from '../../domain/entities/user'
-import { RegisterUserParams } from '../../domain/use-cases/register-user'
-import { Hasher } from '../../ports/cryptography/hasher'
-import { LoadUserByEmailRepository } from '../../ports/repositories/load-by-email'
-import { RegisterUserRepository } from '../../ports/repositories/register'
-import { RegisterUserValidator } from '../../ports/validators/register-user-validator'
-import { RegisterUserUseCase } from './register-user'
+import { User } from '../../../src/domain/entities/user'
+import { RegisterUserParams } from '../../../src/domain/use-cases/register-user'
+import { Hasher } from '../../../src/ports/cryptography/hasher'
+import { LoadUserByEmailRepository } from '../../../src/ports/repositories/load-by-email'
+import { RegisterUserRepository } from '../../../src/ports/repositories/register'
+import { RegisterUserValidator } from '../../../src/ports/validators/register-user-validator'
+import { RegisterUserUseCase } from '../../../src/aplication/register-user/register-user'
 
 type SutTypes = {
   sut: RegisterUserUseCase,

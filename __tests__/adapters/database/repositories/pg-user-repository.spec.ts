@@ -1,4 +1,4 @@
-import { PgUserRepository } from './pg-user-repository'
+import { PgUserRepository } from '../../../../src/adapters/database/repositories/pg-user-repository'
 import { createConnection, getConnection } from 'typeorm'
 import 'reflect-metadata'
 

@@ -1,6 +1,6 @@
-import { AuthenticationUser, AuthenticationUserParams, AuthenticationUserResponse } from '../../../domain/use-cases/autentication'
-import { HttpRequest } from '../type-adapter/controller-adapter'
-import { LoginUserController } from './login-user-controller'
+import { AuthenticationUser, AuthenticationUserParams, AuthenticationUserResponse } from '../../../../src/domain/use-cases/autentication'
+import { HttpRequest } from '../../../../src/adapters/rest/type-adapter/controller-adapter'
+import { LoginUserController } from '../../../../src/adapters/rest/controllers/login-user-controller'
 
 type SutTypes = {
   sut: LoginUserController,

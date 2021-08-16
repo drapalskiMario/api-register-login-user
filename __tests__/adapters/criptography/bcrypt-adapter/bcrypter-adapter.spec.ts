@@ -1,4 +1,4 @@
-import { BcrypterAdapter } from './bcrypter-adapter'
+import { BcrypterAdapter } from '../../../../src/adapters/criptography/bcrypt-adapter/bcrypter-adapter'
 import bcrypt from 'bcrypt'
 
 const makeSut = (): BcrypterAdapter => {

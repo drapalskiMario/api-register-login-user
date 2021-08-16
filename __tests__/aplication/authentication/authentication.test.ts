@@ -1,12 +1,12 @@
 
-import { User } from '../../domain/entities/user'
-import { AuthenticationUser, AuthenticationUserParams } from '../../domain/use-cases/autentication'
-import { Encrypter } from '../../ports/cryptography/encrypter'
-import { HashComparer } from '../../ports/cryptography/hash-comparer'
-import { LoadUserByEmailRepository } from '../../ports/repositories/load-by-email'
-import { SaveUserTokenRepository } from '../../ports/repositories/save-user-token'
-import { AuthUserValidator } from '../../ports/validators/auth-user-validator'
-import { AuthenticationUserUseCase } from './authentication'
+import { User } from '../../../src/domain/entities/user'
+import { AuthenticationUser, AuthenticationUserParams } from '../../../src/domain/use-cases/autentication'
+import { Encrypter } from '../../../src/ports/cryptography/encrypter'
+import { HashComparer } from '../../../src/ports/cryptography/hash-comparer'
+import { LoadUserByEmailRepository } from '../../../src/ports/repositories/load-by-email'
+import { SaveUserTokenRepository } from '../../../src/ports/repositories/save-user-token'
+import { AuthUserValidator } from '../../../src/ports/validators/auth-user-validator'
+import { AuthenticationUserUseCase } from '../../../src/aplication/authentication/authentication'
 
 type SutTypes = {
   sut: AuthenticationUser,
