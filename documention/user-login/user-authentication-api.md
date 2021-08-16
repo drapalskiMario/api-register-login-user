@@ -1,6 +1,6 @@
 >## User Register API
 
-* Request to http://{URI}/user/register
+* Request to http://{URI}/user/auth
 * Verb POST
-* Params: name, email, password, passwordConfirmation
-* Output: { id, name, email, passwordHash}
+* Params: email, password
+* Output: { token }

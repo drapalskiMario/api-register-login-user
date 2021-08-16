@@ -1,6 +1,6 @@
-import { RegisterUserParams } from '../../domain/use-cases/register-user'
-import { RegisterUserValidator } from '../../ports/validators/register-user-validator'
-import { ValidatorRegisterUserAdapter } from './validator-register-user-adapter'
+import { RegisterUserParams } from '../../../src/domain/use-cases/register-user'
+import { RegisterUserValidator } from '../../../src/ports/validators/register-user-validator'
+import { ValidatorRegisterUserAdapter } from '../../../src/adapters/validator/validator-register-user-adapter'
 
 const makeSut = (): RegisterUserValidator => {
   return new ValidatorRegisterUserAdapter()

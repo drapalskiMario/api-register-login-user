@@ -1,6 +1,6 @@
-import { AuthenticationUserParams } from '../../domain/use-cases/autentication'
-import { AuthUserValidator } from '../../ports/validators/auth-user-validator'
-import { ValidatorAuthUserAdapter } from './validator-auth-user-adapter'
+import { AuthenticationUserParams } from '../../../src/domain/use-cases/autentication'
+import { AuthUserValidator } from '../../../src/ports/validators/auth-user-validator'
+import { ValidatorAuthUserAdapter } from '../../../src/adapters/validator/validator-auth-user-adapter'
 
 const makeSut = (): AuthUserValidator => {
   return new ValidatorAuthUserAdapter()
