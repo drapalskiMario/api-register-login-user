@@ -1,4 +1,4 @@
-import { AuthenticationUserUseCase } from '../../../aplication/authentication/authentication'
+import { AuthenticationUserUseCase } from '../../../application/authentication/authentication'
 import { BcrypterAdapter } from '../../criptography/bcrypt-adapter/bcrypter-adapter'
 import { JwtAdapter } from '../../criptography/jwt-adapter/jwt-adapter'
 import { PgUserRepository } from '../../database/repositories/pg-user-repository'

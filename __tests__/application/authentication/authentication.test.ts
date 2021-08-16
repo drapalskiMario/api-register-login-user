@@ -6,7 +6,7 @@ import { HashComparer } from '../../../src/ports/cryptography/hash-comparer'
 import { LoadUserByEmailRepository } from '../../../src/ports/repositories/load-by-email'
 import { SaveUserTokenRepository } from '../../../src/ports/repositories/save-user-token'
 import { AuthUserValidator } from '../../../src/ports/validators/auth-user-validator'
-import { AuthenticationUserUseCase } from '../../../src/aplication/authentication/authentication'
+import { AuthenticationUserUseCase } from '../../../src/application/authentication/authentication'
 
 type SutTypes = {
   sut: AuthenticationUser,

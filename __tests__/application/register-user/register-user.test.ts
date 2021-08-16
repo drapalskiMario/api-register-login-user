@@ -5,7 +5,7 @@ import { Hasher } from '../../../src/ports/cryptography/hasher'
 import { LoadUserByEmailRepository } from '../../../src/ports/repositories/load-by-email'
 import { RegisterUserRepository } from '../../../src/ports/repositories/register'
 import { RegisterUserValidator } from '../../../src/ports/validators/register-user-validator'
-import { RegisterUserUseCase } from '../../../src/aplication/register-user/register-user'
+import { RegisterUserUseCase } from '../../../src/application/register-user/register-user'
 
 type SutTypes = {
   sut: RegisterUserUseCase,
